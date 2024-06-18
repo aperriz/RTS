@@ -14,23 +14,39 @@ public class Controllable : NetworkBehaviour
 
     [SerializeField] public int health = 10;
     [SerializeField] public float hitboxSize = 1f;
+    [SerializeField] public ulong OwnerId = 0;
 
-    [SerializeField] Player owner;
+    NetworkObject owner;
+    SelectionController selection;
 
     private void Awake()
     {
         hitbox.size = new Vector2(hitboxSize, hitboxSize);
+
+        Debug.Log(OwnerId);
+        Debug.Log(OwnerClientId);
     }
 
-    // Start is called before the first frame update
-    void Start()
+    public void Select()
     {
-        
+        if (OwnerId == OwnerClientId)
+        {
+            if(SetOwner()) selection.OverwriteSelect(this);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private bool SetOwner()
     {
-        
+        try
+        {
+            owner = NetworkManager.Singleton.ConnectedClients[OwnerClientId - 1].PlayerObject;
+
+            if (owner != null)
+            {
+                selection = owner.GetComponent<SelectionController>();
+            }
+            return true;
+        }
+        catch { return false; }
     }
 }

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4399054669073573266}
   - component: {fileID: 6421396190154542522}
   - component: {fileID: 670606686408162409}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Controllable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,6 +126,7 @@ MonoBehaviour:
   hitbox: {fileID: 4399054669073573266}
   health: 10
   hitboxSize: 1.25
+  OwnerId: 0
 --- !u!50 &6590689439267206822
 Rigidbody2D:
   serializedVersion: 4

@@ -16,12 +16,12 @@
                 },
                 {
                     "name": "Fast Pan",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "9a2f512d-6000-4a57-96db-09cf949d10f0",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -83,11 +83,39 @@
                 {
                     "name": "",
                     "id": "bb5c6fce-d7de-4abe-853d-6b93e04214ae",
-                    "path": "<Keyboard>/shift",
+                    "path": "<Keyboard>/leftShift",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "WASD",
                     "action": "Fast Pan",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Inputs",
+            "id": "5e4f93f3-0c57-453a-8167-80089ae5b36b",
+            "actions": [
+                {
+                    "name": "Click",
+                    "type": "Button",
+                    "id": "02a2dcd8-cde7-4e8e-9453-8c4917bb8274",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "510b0a5a-d7f7-425e-8ec0-ae0977fa1034",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "WASD",
+                    "action": "Click",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
