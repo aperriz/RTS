@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
 using Unity.Netcode;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CameraController : NetworkBehaviour
@@ -12,11 +15,8 @@ public class CameraController : NetworkBehaviour
         if (IsOwner)
         {
             cameraHolder.SetActive(true);
+            cameraHolder.AddComponent<SelectionController>();
         }
-    }
 
-    private void Update()
-    {
-        cameraHolder.transform.position = transform.position;
     }
 }

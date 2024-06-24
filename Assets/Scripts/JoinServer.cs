@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class JoinServer : NetworkBehaviour
 {
+
     private void Start()
     {
         if(Application.isEditor)

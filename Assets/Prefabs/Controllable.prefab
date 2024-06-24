@@ -122,11 +122,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ac016e01fcd65b47a9dfe56f27f5a42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _ownerIds: 00000000000000000100000000000000
   rb2d: {fileID: 6590689439267206822}
   hitbox: {fileID: 4399054669073573266}
   health: 10
   hitboxSize: 1.25
-  OwnerId: 0
 --- !u!50 &6590689439267206822
 Rigidbody2D:
   serializedVersion: 4

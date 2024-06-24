@@ -1,20 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using Unity.Netcode;
 using Unity.Services.Lobbies.Models;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Controllable : NetworkBehaviour
+public class Controllable : Selectable
 {
     [SerializeField]
     Rigidbody2D rb2d;
     [SerializeField]
     BoxCollider2D hitbox;
 
-    [SerializeField] public int health = 10;
-    [SerializeField] public float hitboxSize = 1f;
-    [SerializeField] public ulong OwnerId = 0;
+    public int health = 10;
+    public float hitboxSize = 1f;
 
     NetworkObject owner;
     SelectionController selection;
@@ -23,16 +23,8 @@ public class Controllable : NetworkBehaviour
     {
         hitbox.size = new Vector2(hitboxSize, hitboxSize);
 
-        Debug.Log(OwnerId);
+        Debug.Log(_ownerIds);
         Debug.Log(OwnerClientId);
-    }
-
-    public void Select()
-    {
-        if (OwnerId == OwnerClientId)
-        {
-            if(SetOwner()) selection.OverwriteSelect(this);
-        }
     }
 
     private bool SetOwner()
@@ -43,7 +35,7 @@ public class Controllable : NetworkBehaviour
 
             if (owner != null)
             {
-                selection = owner.GetComponent<SelectionController>();
+                selection = owner.GetComponentInChildren<SelectionController>();
             }
             return true;
         }

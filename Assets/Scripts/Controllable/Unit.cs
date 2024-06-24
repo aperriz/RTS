@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Unit : Controllable
+public class Unit : Selectable
 {
     [SerializeField]
     CircleCollider2D attackZone;
