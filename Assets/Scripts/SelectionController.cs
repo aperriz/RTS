@@ -7,6 +7,7 @@ public class SelectionController : NetworkBehaviour
 {
     [SerializeField]
     private List<Selectable> selectedObjects = new();
+    public HashSet<Selectable> ownedUnits = new();
 
     public void OverwriteSelect(Selectable target)
     {
@@ -55,4 +56,15 @@ public class SelectionController : NetworkBehaviour
             }
         }
     }
+
+    public void ClearSelection()
+    {
+        selectedObjects.Clear();
+    }
+    //
+    //      TODO:
+    //  Make deselect when no unit clicked on
+    //  Movement (duh)
+    //
+
 }

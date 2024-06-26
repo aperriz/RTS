@@ -22,16 +22,13 @@ public class Controllable : Selectable
     private void Awake()
     {
         hitbox.size = new Vector2(hitboxSize, hitboxSize);
-
-        Debug.Log(_ownerIds);
-        Debug.Log(OwnerClientId);
     }
 
     private bool SetOwner()
     {
         try
         {
-            owner = NetworkManager.Singleton.ConnectedClients[OwnerClientId - 1].PlayerObject;
+            //owner = NetworkManager.Singleton.ConnectedClients[OwnerClientId - 1].PlayerObject;
 
             if (owner != null)
             {
