@@ -41,7 +41,7 @@ public class Selectable : NetworkBehaviour, IPointerEnterHandler, IPointerExitHa
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        Debug.Log("Click");
+        //Debug.Log("Click");
 
         ulong clickId = eventData.enterEventCamera.gameObject.GetComponent<NetworkObject>().OwnerClientId;
         SelectionController clicker = NetworkManager.Singleton.ConnectedClients[clickId].PlayerObject.GetComponent<SelectionController>();
@@ -73,7 +73,7 @@ public class Selectable : NetworkBehaviour, IPointerEnterHandler, IPointerExitHa
     }
     private void OnMouseDown()
     {
-        Debug.Log("Mouse down");
+        //Debug.Log("Mouse down");
     }
     public void OnPointerDown(PointerEventData eventData)
     {
@@ -93,5 +93,6 @@ public class Selectable : NetworkBehaviour, IPointerEnterHandler, IPointerExitHa
 
     }
 
+    virtual public void Move(Vector2 dest) { }
 
 }

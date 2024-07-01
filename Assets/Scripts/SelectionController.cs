@@ -6,7 +6,7 @@ using UnityEngine;
 public class SelectionController : NetworkBehaviour
 {
     [SerializeField]
-    private List<Selectable> selectedObjects = new();
+    public List<Selectable> selectedObjects = new();
     public HashSet<Selectable> ownedUnits = new();
 
     public void OverwriteSelect(Selectable target)
